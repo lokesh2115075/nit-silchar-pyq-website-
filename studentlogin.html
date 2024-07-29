@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        
+        .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .login-container p {
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .login-container a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .email{
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button {
+            border-radius: 4px;
+            font-size: 15px;
+            color: white;
+            background-color: rgb(4, 4, 92);
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <input class="email" name="email" placeholder="Username" required>
+            <input class="password" type="password" placeholder="Password" required>
+            <p>Don't have an account? <a href="./signuppage.html">Create one</a></p>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+     
+        document.querySelector(".button").addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            const useremail = document.querySelector(".email").value;
+            const userpassword = document.querySelector(".password").value;
+
+            if (!useremail.endsWith(".nits.ac.in")) {
+                alert("You are not a NIT Silchar student");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:4141/checkstudentdetails", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: useremail,
+                        password: userpassword
+                    })
+                });
+
+                if (response.ok) {
+                    console.log(response)
+                    alert("Successfully logged in");
+                    localStorage.setItem("loggedIn", "true");
+                    window.location.href="./index.html";
+                } else {
+                    alert("Failed to login");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert("An error occurred while logging in");
+            }
+        });
+    </script>
+</body>
+</html>

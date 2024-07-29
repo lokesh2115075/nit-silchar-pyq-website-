@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar and Footer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+             <div class="logo">NITS'25</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#services">About</a></li>
+                <li><a class="anchor"  >Materials</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li class="login"><a href="./studentlogin.html">Login</a></li>
+                <li class="logout"><a  onclick="logout()">Logout</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+        <h1>Welcome to NITS'25</h1>
+        <br>
+        <h3>Get all your Study Materials at your fingertips!</h3><br>
+        <button id="id1" >Get Started</button>
+        </div>
+        <div class="section">
+            <div class="content">
+             <p class="title1">WHY NITS'25</p>
+             <p class="title2">this is invaluable for students preparing for exams. It provides easy access to a vast collection of past papers, saving time and effort in searching for resources. Such websites often categorize papers by subject and exam type, streamlining study efforts. They may also offer solutions and explanations, enhancing understanding and learning. By regularly updating with the latest papers, these websites ensure students practice with relevant material. Ultimately, they help improve exam readiness, performance, and confidence by offering comprehensive, organized, and accessible study resources.</p>
+            </div>
+            <br>
+            <div class="image">
+            </div>
+            </div>
+            <div class="section2">
+             <div class="picture2">
+             </div>
+             <div class="content2">
+                 <p class="title1">Edge of Using this website</p>
+                 <p class="title2">This website enhances the educational experience by offering organized access to a variety of exam papers. It aids students in exam preparation, providing a vast repository of past papers, sample questions, and practice tests. Teachers benefit from easy retrieval and sharing of resources, facilitating better curriculum planning. The design should be user-friendly, ensuring quick navigation and search capabilities. Features like categorization by subject, grade, and difficulty level improve usability. Additionally, interactive elements like timed quizzes and instant feedback can make studying more engaging. Overall, a thoughtfully designed question paper website is an invaluable tool for both students and educators.</p>
+                </div>
+            </div>
+            <div class="get">
+                <p class="title1">Get In Touch</p>
+                <p class="title1">If you have any complaints or have any questions, feel free to drop a mail.</p>
+               </div>
+               <div class="section3">
+                <div class="share">
+                    <textarea id ="comment" rows="12" cols="80">Type here</textarea>
+                    <button id="end">Submit</button>
+               </div>
+               <div class="image3"></div>
+    </main>
+
+    <footer >
+        <div id="footer" class="thanks">
+           <p class="heading5">Thanks for visiting!</p>
+        </div>
+       <div class="container">
+           <div class="div1">
+               <p class="heading1">Contact us</p>
+               <p class="heading2">Adress:National Institute of Technology,Silchar (Cachar(Dist),Assam),India.</p>
+               <p class="heading2">Contact:555555555</p>
+           </div>
+           <div class="div2">
+               <p class="heading1"> Quick Links</p>
+               <ul>
+                   <li><a href="#">Campus</a></li>
+                   <li><a href="#">Campus</a></li>
+               </ul>
+           </div>
+           <div class="div3">
+               <p class="heading1">Follow us on</p>
+               <ul>
+                   <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                   <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                   <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                   <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+               </ul>
+           </div>
+       </div>
+       <div class="copy">
+           <div class="symbol">
+               <i class="fa-regular fa-copyright"></i>
+           </div>
+           <p class="heading5">all copyrights are reserved@2025</p>
+       </div>
+
+       
+   </footer>
+
+  <script>
+
+    var change1=document.querySelector(".login");
+    var change2=document.querySelector(".logout");
+    if(localStorage.getItem('loggedIn'))
+    {
+        change1.classList.add('login1');
+        change2.classList.add('logout1');
+    }
+    else{
+        change1.classList.remove('login1');
+        change2.classList.remove('logout1');
+    }
+    function logout(e){
+        localStorage.clear();
+        alert("logged out succesfully");
+        window.location.reload();
+
+    }
+var anchorClicked = document.getElementsByClassName("anchor");
+
+    anchorClicked[0].addEventListener('click', (e) => {
+      
+        if (localStorage.getItem('loggedIn') === 'true') {
+            window.location.href = "./material.html";
+        }
+        else{
+            alert("please login")
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+
+        
+       
+  </script>
+</body>
+</html>

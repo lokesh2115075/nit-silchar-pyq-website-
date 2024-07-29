@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Tech Details Form</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Details</h2>
+        <form id="detailsForm">
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="cse">Computer Science & Engineering</option>
+                <option value="ece">Electronics & Communication Engineering</option>
+                <option value="eie">Electronics and Instrumentation Engineering</option>
+            </select>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">Select Semester</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+                <option value="3">3rd Semester</option>
+                <option value="4">4th Semester</option>
+                <option value="5">5th Semester</option>
+                <option value="6">6th Semester</option>
+                <option value="7">7th Semester</option>
+                <option value="8">8th Semester</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="form-group">
+            <label for="text">Click here for uploading document</label>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIipMCfvSMG345ix7HyLItBtNRnV-QOLhEgSf0eVlQ774Egw/viewform?usp=sf_link">
+            <button>Upload</button>
+        </a>
+    </div>
+
+    <script>
+        let pappercred = [];
+
+        document.getElementById("detailsForm").addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            pappercred.push(document.getElementById("year").value);
+            pappercred.push(document.getElementById("department").value);
+            pappercred.push(document.getElementById("semester").value);
+
+            const [year, department, semester] = pappercred;
+
+            if (year === "1" && department === 'cse' && semester === '1') {
+                window.location.href = "https://drive.google.com/drive/folders/1hbr-2y4lEvaVmsYsNQx_KUc5a6ri1fr9?usp=sharing";
+            } else if (year === "1" && department === 'cse' && semester === '2') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1RkqwKdhXSYLltFbbRSx5e0ma2oKj_Db8";
+            } else if (year === "1" && department === 'ece' && semester === '1') {
+                window.location.href = "https://drive.google.com/drive/folders/1zpv8y-TxOYqorhdqqk5e8m4S0BY8zH3a?usp=sharing";
+            } else if (year === "1" && department === 'ece' && semester === '2') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1eHTgWbm6bt5wBvYmvOhpWx498OxYGFqb";
+            } else if (year === "1" && department === 'eie' && semester === '1') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1HRpJWCSCsnuLQ9UmRKyJfqC1HJmgUTpf";
+            } else if (year === "1" && department === 'eie' && semester === '2') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1OZFiPidEoMnt8s9lCm9G_BHsG5gx6px6";
+            } else if (year === "2" && department === 'cse' && semester === '3') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1RRL-6Ab2UcXGglOsmndmwrLhBOSrGJA-";
+            } else if (year === "2" && department === 'cse' && semester === '4') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1BNritd9U6XV2gul0cQOyPVbTSR-3B7XT";
+            } else if (year === "2" && department === 'ece' && semester === '3') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1KIf7njkCGqfQ3AYxJjTh5l4l-Cj7_NVs";
+            } else if (year === "2" && department === 'ece' && semester === '4') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1olWBoDXROTfvDj_p_tXx-pf9FlZsWlkw";
+            } else if (year === "2" && department === 'eie' && semester === '3') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1TBGOaZjr6QK7f3xSoMQAc9NVfapN-2EO";
+            } else if (year === "2" && department === 'eie' && semester === '4') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/14lcBpHdzeCbpuu2D-YXZzlDFfrN5qq46";
+            } else if (year === "3" && department === 'cse' && semester === '5') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1klkRCUK5LY-O-9TU6HSZxCmXAKDnneFI";
+            } else if (year === "3" && department === 'cse' && semester === '6') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1zFhJ_Bgw4Z3nMCeqKNFHd6ktIyoU1NY1";
+            } else if (year === "3" && department === 'ece' && semester === '5') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1wZf92_U2rcpqGdsnkz4hE6lS39rLoW3i";
+            } else if (year === "3" && department === 'ece' && semester === '6') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1n2C7GsDNHcr3hHmBsM6bs-wbSrJh-rAB";
+            } else if (year === "3" && department === 'eie' && semester === '5') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1V_JW1aL1OXLGwEDbv9FH6Y3kljLkipoi";
+            } else if (year === "3" && department === 'eie' && semester === '6') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1e2ykMqtID20PRIj0imo7M68yhiXXRjog";
+            } else if (year === "4" && department === 'cse' && semester === '7') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1NzDC4f2PcemOlkzC3-pL_4fD9-hjZD8-";
+            } else if (year === "4" && department === 'cse' && semester === '8') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1g5BPCpK_DHSMSLaxaNu6vFa2b3UkBAqC";
+            } else if (year === "4" && department === 'ece' && semester === '7') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/1rJyC6oeAZ6E2MS_WFvGwqEPoD4I8AiSf";
+            } else if (year === "4" && department === 'ece' && semester === '8') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/11Ivknc7vSTtSTW4sFgb9cPd6eySZXL3i";
+            } else if (year === "4" && department === 'eie' && semester === '7') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/14AO2kJtWDH_6RXjUcrtCEzsAjbyH7sAN";
+            } else if (year === "4" && department === 'eie' && semester === '8') {
+                window.location.href = "https://drive.google.com/drive/u/0/folders/13lBK5y_7NDhZCk_2goxbhwbbexVm3PbH";
+            }
+
+            pappercred.length = 0;
+        });
+    </script>
+</body>
+</html>
